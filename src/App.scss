@@ -1,6 +1,30 @@
 .main__page {
-  background-color: lightblue;
-  &__test__h1 {
-    color: green;
-  }
+  background-color: #021310;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.App {
+  min-height: 100vh;
+  /* width: 100vw; */
+  background: #021310;
+}
+
+body {
+  background: #021310;
+}
+
+@font-face {
+  font-family: Jost;
+  src: url("./assets/fonts/Jost-Regular.ttf");
+}
+
+@font-face {
+  font-family: ethnocentric;
+  src: url("./assets/fonts/ethnocentric-rg.otf");
 }

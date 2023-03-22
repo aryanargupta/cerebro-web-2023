@@ -1,0 +1,65 @@
+.authbtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0px 10px 0px;
+
+  &__button {
+    &__enable {
+      cursor: pointer;
+      margin-top: 5px;
+      width: 362px;
+      height: 46px;
+      background: black;
+      border: none;
+      border-radius: 5px;
+
+      &:active {
+        box-shadow: 0 1px #666;
+        transform: translateY(0.5px);
+      }
+
+      &__text {
+        font-family: Jost;
+        font-weight: 600;
+        font-size: 18px;
+        color: #D7D7D7;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__disable {
+      pointer-events: none;
+      margin-top: 5px;
+      width: 166px;
+      height: 41px;
+      background: #aaaaaa;
+      border-radius: 11px;
+
+      &__text {
+        font-family: Jost;
+        font-size: 24px;
+        text-align: center;
+        color: #000000;
+      }
+    }
+  }
+
+  &__status {
+    &__error {
+      font-size: 15px;
+      font-weight: 500;
+      color: #ff0033;
+    }
+
+    &__success {
+      font-size: 15px;
+      font-weight: 500;
+      color: #12ca50;
+    }
+  }
+}
