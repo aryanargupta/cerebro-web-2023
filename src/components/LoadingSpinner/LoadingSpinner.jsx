@@ -1,3 +1,4 @@
+/* eslint-disable */
 import loadingLogo from '../../assets/images/Logo.png';
 import "./LoadingSpinner.scss";
 

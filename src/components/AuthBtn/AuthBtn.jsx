@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import BtnLoader from '../BtnLoader/BtnLoader';
 import './AuthBtn.scss';

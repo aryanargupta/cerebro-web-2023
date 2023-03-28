@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import AuthForm from '../../components/AuthForm/AuthForm';

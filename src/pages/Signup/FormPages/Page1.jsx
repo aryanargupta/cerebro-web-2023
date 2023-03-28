@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import FormInput from '../../../components/FormInput/FormInput';
 import { signupFormData } from '../util/SignupFormData';

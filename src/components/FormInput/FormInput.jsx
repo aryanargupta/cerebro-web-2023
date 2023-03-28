@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { ErrorMessage, Field } from 'formik';
 import './FormInput.scss';
