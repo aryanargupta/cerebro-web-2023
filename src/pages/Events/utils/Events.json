@@ -1,0 +1,215 @@
+[
+    {
+        "id": 1,
+        "event_type": "tech",
+        "team_event": true,
+        "title": "Cook A Code",
+        "short_name": "CAC",
+        "description": "This is a team event with a team size of three people. The competition consists of a single round. It is an online programming competition that comprises numerous programming tasks designed to put competitors' data structures and algorithmic skills to the test. It will be hosted on Codechef online. The winners will be chosen based on their ranking and performance in the online contest. The round will be conducted under the ICPC format.",
+        "prize": "14000",
+        "team_size": 3,
+        "start_time": "2023-04-06 21:00:00",
+        "end_time": "2023-04-06 23:59:00",
+        "rules_doc": "",
+        "social_media": "https://instagram.com/codingclub_iiitv",
+        "registration_closed": false,
+        "registration_attributes": {
+            "codechef id": "^[a-z][a-z0-9_]{1,19}$"
+        },
+        "submission_required": false,
+        "submission_attributes": null,
+        "submission_closed": false,
+        "contacts": [
+            {
+                "id": 1,
+                "name": "ADITYA SAXENA",
+                "role": "Convenor",
+                "phone_number": "6352 984 805"
+            },
+            {
+                "id": 2,
+                "name": "ANIRUDDH MODI",
+                "role": "Co-Convenor1",
+                "phone_number": "79743 99974"
+            },
+            {
+                "id": 3,
+                "name": "HITARTH THAKKAR",
+                "role": "Member1",
+                "phone_number": "92286 07722"
+            },
+            {
+                "id": 4,
+                "name": "JEET JANI",
+                "role": "Member2",
+                "phone_number": "70160 02809"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "event_type": "tech",
+        "team_event": true,
+        "title": "Robo Race",
+        "short_name": "RR",
+        "description": "",
+        "prize": "15000",
+        "team_size": 3,
+        "start_time": "2023-04-07 19:00:00",
+        "end_time": "2023-04-07 23:00:00",
+        "rules_doc": "",
+        "social_media": null,
+        "registration_closed": false,
+        "registration_attributes": null,
+        "submission_required": false,
+        "submission_attributes": null,
+        "submission_closed": false,
+        "contacts": [
+            {
+                "id": 9,
+                "name": "Athrav Kale",
+                "role": "Convenor",
+                "phone_number": "9867915375"
+            },
+            {
+                "id": 10,
+                "name": "Varun Vilva",
+                "role": "Co-Convenor1",
+                "phone_number": "9321071187"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "event_type": "tech",
+        "team_event": false,
+        "title": "Build It Better",
+        "short_name": "BIB",
+        "description": "The event gives the participants a chance to showcase their Web Development skills by making a functional website by using certain assets which would be provided to them by the organisers. Only solo participation is allowed and the participants will have to submit the link to their website (must be hosted using github pages) through a google form which would be provided to them. The theme will be open and use of any technology other than HTML, CSS and JavaScript is restricted. Participants will be given 6 hours to build their website, the judgement will be done based on the originality, creativity, metadata, friendliness of the website and proper use of assets.",
+        "prize": "10000",
+        "team_size": 1,
+        "start_time": "2023-04-05 10:00:00",
+        "end_time": "2023-04-05 16:00:00",
+        "rules_doc": "https://docs.google.com/document/d/1Wjqae0RXbkQtnYgu3VhxrgDQQyvw0WzzDk-4vyj-wfw/edit?usp=sharing",
+        "social_media": "https://www.instagram.com/codingclub_iiitv/",
+        "registration_closed": false,
+        "registration_attributes": null,
+        "submission_required": true,
+        "submission_attributes": {
+            "Description": "^.{1,250}$",
+            "Github Repo": "^(?:https?://)?(?:www\\.)?github\\.com/([A-Za-z0-9_-]+/[A-Za-z0-9_-]+)(?:\\.git)?$",
+            "Hosted Link": "^(https?|ftp)://[^\\s/$.?#].[^\\s]*$",
+            "Title of project": "^.{1,50}$"
+        },
+        "submission_closed": false,
+        "contacts": [
+            {
+                "id": 5,
+                "name": "MADHUR GUPTA",
+                "role": "Convenor",
+                "phone_number": "89624 28691"
+            },
+            {
+                "id": 6,
+                "name": "DHRUV DAVE",
+                "role": "Convenor",
+                "phone_number": "90330 17749"
+            },
+            {
+                "id": 7,
+                "name": "ADITYA CHAURASIYA",
+                "role": "Co-Convenor1",
+                "phone_number": "97219 10994"
+            },
+            {
+                "id": 8,
+                "name": "SHRAVANI KAWARE",
+                "role": "Co-Convenor2",
+                "phone_number": "8432453175"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "event_type": "design-photo",
+        "team_event": false,
+        "title": "Intrigue",
+        "short_name": "INT",
+        "description": "Intrigue is a 7 day Design event in which designers and artists can showcase their work and creativity by creating beautiful Illustrations on the theme given. Any sort of digital artwork is welcome but it should be theme specific which would be provided to them by the organizers. Only solo participation is allowed and the participants will have to submit their artwork through a google form which would be provided to them. Detailed Description of the theme will be provided with the release of the problem statement at the beginning of the event. Participants will be provided 11 days time for creation and submission. The final judgment regarding winners will be based upon the originality of their content.",
+        "prize": "10000",
+        "team_size": 1,
+        "start_time": "2023-04-01 10:00:00",
+        "end_time": "2023-04-07 10:00:00",
+        "rules_doc": "https://docs.google.com/document/d/1qSqRYXF3CE5upx614wtZ1QqwYQv8dtejtIJm13qbF5g/edit?usp=sharing",
+        "social_media": "https://www.instagram.com/dot_designclub/",
+        "registration_closed": false,
+        "registration_attributes": {
+            "Github ID": "^[a-zA-Z0-9-_]+$"
+        },
+        "submission_required": true,
+        "submission_attributes": {
+            "Description": "^.{1,250}$",
+            "Title of project": "^.{1,50}$"
+        },
+        "submission_closed": false,
+        "contacts": [
+            {
+                "id": 15,
+                "name": "Shruti Gupta",
+                "role": "Convenor",
+                "phone_number": "8279819423"
+            },
+            {
+                "id": 16,
+                "name": "Riya Parikh",
+                "role": "Convenor",
+                "phone_number": "8849670805"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "event_type": "tech",
+        "team_event": false,
+        "title": "Prudentia",
+        "short_name": "PRU",
+        "description": "A 4-day-long virtual stock trading competition that will take place on the Stockgro platform. Participants will be given a virtual amount of Rs. 10,00,000 initially and they will have to trade during the market hours, using the real-time stock prices, for 3-trading days. The strongest portfolio will be the winners of this league. This competition will not only test participants’ trading skills, but also help them get a virtual experience of trading in the real stock market.",
+        "prize": "10000",
+        "team_size": 1,
+        "start_time": "2023-04-03 09:35:00",
+        "end_time": "2023-04-06 15:25:00",
+        "rules_doc": "https://docs.google.com/document/d/1TKD97qIzJTesLb27edXnKIgp71lVGSHL/edit?usp=sharing&ouid=117112655793319793748&rtpof=true&sd=true",
+        "social_media": "https://www.instagram.com/fnc_iiitv/",
+        "registration_closed": false,
+        "registration_attributes": null,
+        "submission_required": false,
+        "submission_attributes": null,
+        "submission_closed": false,
+        "contacts": [
+            {
+                "id": 11,
+                "name": "Vansh Goel",
+                "role": "Convenor",
+                "phone_number": "7310771002"
+            },
+            {
+                "id": 12,
+                "name": "Snehal Nalawade",
+                "role": "Co-Convenor1",
+                "phone_number": "8010552188"
+            },
+            {
+                "id": 13,
+                "name": "Malaika Varshney",
+                "role": "Member1",
+                "phone_number": "9528484481"
+            },
+            {
+                "id": 14,
+                "name": "Yatharth Shivhare",
+                "role": "Member2",
+                "phone_number": "9665483368"
+            }
+        ]
+    }
+]
