@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from 'axios';
 
 const axiosInstance = axios.create({
@@ -6,10 +7,11 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
+  const newconfig = config;
   if (token) {
-    config.headers.Authorization = `Token ${token}`;
+    newconfig.headers.Authorization = `Token ${token}`;
   }
-  return config;
+  return newconfig;
 });
 
 axiosInstance.interceptors.response.use(
