@@ -1,0 +1,201 @@
+$tablet: 1100px;
+$mobile: 600px;
+
+.authform {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: url(../../assets/images/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 92.5%;
+  height: 100vh;
+
+  @media screen and (max-width: $tablet) {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__link {
+    cursor: pointer;
+    position: fixed;
+    top: 4.75%;
+    left: 1.25%;
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &__text {
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #ffffff;
+      }
+
+      &__icon {
+        margin-right: 4px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+
+  &__center {
+    position: absolute;
+    width: 42.5%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      height: max-content;
+    }
+
+    &__form {
+      background: linear-gradient(rgba(25, 71, 72, 0.31) 100%,
+          rgba(255, 255, 255, 0) 0%);
+      position: relative;
+      filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+      backdrop-filter: blur(10px);
+      clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 0 100%);
+      width: 100%;
+      min-height: 100%;
+      height: auto;
+      padding: 20px 0px;
+      flex-wrap: wrap;
+
+      @media screen and (max-width: $tablet) {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        min-height: 100vh;
+        max-height: fit-content;
+      }
+
+      &__title {
+        background-position-y: top;
+        pointer-events: none;
+        user-select: none;
+        background-size: contain;
+        position: relative;
+
+        &__text {
+          font-family: Ethnocentric;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 36px;
+          // color: #AFAE7A;
+          // color: linear-gradient(180deg, #FEFDCA 0%, #AFAE7A 100%);
+          background: -webkit-linear-gradient(#FEFDCA, #AFAE7A);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          position: relative;
+          width: 100%;
+          text-align: center;
+          margin-top: 12.7%;
+        }
+
+        &__sub {
+          position: relative;
+          font-family: Jost;
+          color: white;
+          font-weight: 400;
+          font-size: 18px;
+          text-align: center;
+        }
+
+        &__alttext{
+          font-family: Ethnocentric;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 36px;
+          // color: #AFAE7A;
+          // color: linear-gradient(180deg, #FEFDCA 0%, #AFAE7A 100%);
+          background: -webkit-linear-gradient(#FEFDCA, #AFAE7A);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          position: relative;
+          width: 100%;
+          text-align: center;
+          margin-top: 6.3%;
+          padding-bottom: 15%;
+        }
+      }
+
+
+      &__container {
+        // background-image: url("../../assets/images/noise.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 40px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-bottom: 40%;
+
+        &__text {
+          font-family: Jost;
+          font-weight: 400;
+          font-size: 16px;
+          letter-spacing: 0.08em;
+          color: #C8C8C8;
+
+          &__link {
+            text-decoration: none;
+            color: #DDDCA9;
+            font-weight: 600;
+          }
+        }
+
+        &__home {
+          cursor: pointer;
+          width: 150px;
+          height: 39px;
+          background: rgba(28, 160, 255, 0.6);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+
+          &:active {
+            box-shadow: 0 1px #666;
+            transform: translateY(0.5px);
+          }
+
+          &__link {
+            font-family: Jost;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            color: #ffffff;
+          }
+
+          @media screen and (min-width: $tablet) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

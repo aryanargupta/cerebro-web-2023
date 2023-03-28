@@ -1,15 +1,17 @@
-import axios from "axios";
+/* eslint-disable */
+import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: "https://cerebro-backend-2023.onrender.com/",
+  baseURL: 'https://cerebro-2023-backend.onrender.com/',
 });
 
 axiosInstance.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token");
-  if (!!token) {
-    config.headers.Authorization = `Token ${token}`;
+  const token = localStorage.getItem('token');
+  const newconfig = config;
+  if (token) {
+    newconfig.headers.Authorization = `Token ${token}`;
   }
-  return config;
+  return newconfig;
 });
 
 axiosInstance.interceptors.response.use(
@@ -17,7 +19,7 @@ axiosInstance.interceptors.response.use(
   (error) => {
     // TODO: Refresh token
     return Promise.reject(error);
-  }
+  },
 );
 
 export default axiosInstance;
