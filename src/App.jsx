@@ -7,6 +7,7 @@ import Signup from './pages/Signup/Signup';
 import Events from './pages/Events/Events';
 import Sponsors from './pages/Sponsors/Sponsors';
 import Team from './pages/Team/Team';
+import Faqs from './pages/FAQs/Faqs';
 // import Navbar from './components/Navbar';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 
@@ -19,10 +20,11 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      <Route path="events" element={<Events />} />
-      <Route path="sponsors" element={<Sponsors />} />
+      <Route path="/events" element={<Events />} />
+      <Route path="/sponsors" element={<Sponsors />} />
       <Route path="/landing" element={<Landing />} />
       <Route path="/team" element={<Team />} />
+      <Route path="/faqs" element={<Faqs />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
     </Routes>
   );
