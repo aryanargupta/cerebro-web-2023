@@ -1,5 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
 .main__page {
   background-color: #021310;
+  // background-color: lightblue;
+  background-image: url("./assets/images/bgImg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: 50% 50%;
+  width: 100vw;
+  &__test__h1 {
+    color: green;
+  }
 }
 
 * {

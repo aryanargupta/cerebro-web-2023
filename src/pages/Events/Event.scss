@@ -1,0 +1,33 @@
+.event {
+  overflow: hidden;
+  font-family: jost;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+  width: 80%;
+  margin: auto;
+
+  .event-header {
+    a {
+      text-decoration: inherit;
+      color: inherit;
+    }
+    a:hover {
+      scale: (1.2);
+      color: #d0e89f;
+    }
+    padding-bottom: 40px;
+  }
+  .event-container {
+    position: relative;
+
+    .particular-event {
+      width: 100%;
+      // height: 100%;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+    }
+  }
+}

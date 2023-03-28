@@ -1,0 +1,48 @@
+.card {
+  position: relative;
+  background-image: url("../../assets/images/Frame.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 15rem;
+  height: 18rem;
+
+  .eventImg:hover {
+    transition: background-color 2s ease-out;
+    // webkit-filter: blur(4px);
+    filter: blur(4px);
+  }
+
+  .imgArrow {
+    display: none;
+    position: absolute;
+    top: 123px;
+    left: 94px;
+    transform: rotate(-90deg);
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
+
+  .eventImg:hover + .imgArrow {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.card .eventImg {
+  padding: 2rem;
+  position: relative;
+  left: 6px;
+  top: 11px;
+}
+
+.animate {
+  transform: translate(-90%);
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
