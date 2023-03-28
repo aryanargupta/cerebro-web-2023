@@ -8,6 +8,7 @@ import Events from './pages/Events/Events';
 import Sponsors from './pages/Sponsors/Sponsors';
 import Team from './pages/Team/Team';
 // import Navbar from './components/Navbar';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 
 function App() {
   return (
@@ -15,12 +16,14 @@ function App() {
     //   <h1 className="main__page__test__h1">Welcome to Cerebro 2023</h1>
     // </div>
     <Routes>
-      <Route path="/" element={<Signup />} />
       <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
       <Route path="events" element={<Events />} />
       <Route path="sponsors" element={<Sponsors />} />
-      <Route path="login" element={<Landing />} />
-      <Route path="team" element={<Team />} />
+      <Route path="/landing" element={<Landing />} />
+      <Route path="/team" element={<Team />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
     </Routes>
   );
 }

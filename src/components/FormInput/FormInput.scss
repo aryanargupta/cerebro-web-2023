@@ -186,6 +186,9 @@ $small-mobile: 400px;
       &__email {
         width: 95%;
       }
+      &__password {
+        width: 95%;
+      }
     }
   }
 }
@@ -193,10 +196,6 @@ $small-mobile: 400px;
 @media screen and (max-width: $mobile) {
   .forminput {
     width: 85%;
-
-    &__label {
-      text-align: center;
-    }
 
     &__field {
       width: 100%;
