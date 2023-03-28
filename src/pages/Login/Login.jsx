@@ -21,7 +21,8 @@ const Login = () => {
       if (location.state?.from) navigate(location.state.from);
       else navigate("/landing");
     } catch (error) {
-      // console.log(error.response.data);
+      console.log(error);
+      // navigate("/landing");
       let message = "Invalid email or password";
       if (!!error.response && !!error.response.data && !!error.response.data.status) {
         message = error.response.data.status;
