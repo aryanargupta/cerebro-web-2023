@@ -19,6 +19,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'object-curly-newline': 'off',
-    'react/prop-types': 0
+    'react/prop-types': 0,
   },
 };
