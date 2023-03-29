@@ -5,6 +5,11 @@ import img from "../../assets/images/event-img.png";
 import prize_border from "../../assets/images/prize_border.png";
 import "./ParticularEvent.scss";
 const ParticularEvent = () => {
+  const handleonClickRegister=()=>{
+    setDisplay("notDisplay");
+    setDisable("display");
+    setRegisterDisplay("display");
+  }
   const {
     visible,
     setVisible,
@@ -13,7 +18,7 @@ const ParticularEvent = () => {
     setDisplay,
     onClickClose,
     events,
-    openevent,
+    openevent,setDisable,setRegisterDisplay
   } = useContext(EventContext);
   return (
     <div className={`particular-container ${display}`}>
@@ -54,7 +59,7 @@ const ParticularEvent = () => {
 
           <div className="event-btn-container">
             <div className="event-btn-register">
-              <button className="event-btn">Register</button>
+              <button className="event-btn" onClick={handleonClickRegister}>Register</button>
             </div>
             <div className="event-btn-join-team">
               <button className="event-btn">Join team</button>

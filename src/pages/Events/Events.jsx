@@ -6,6 +6,7 @@ import Card from "../../components/Card/Card";
 import Carousel from "../../components/Carousel/Carousel";
 import ParticularEvent from "../../components/particular-event/ParticularEvent";
 import { EventContext } from "../../context/EventContext";
+import Register from "../../components/Event_Registration/Register";
 
 function Events() {
   const { visible, setVisible, display, setDispaly } = useContext(EventContext);
@@ -20,7 +21,11 @@ function Events() {
       <div className="event-container">
         <Carousel />
         <div className="particular-event">
-          <ParticularEvent />
+        {display ==="display" ? <ParticularEvent />:<Register/>
+
+        }
+         
+          
         </div>
       </div>
     </div>

@@ -24,8 +24,9 @@ export const EventProvider = ({ children }) => {
   const [slides, setSlides] = useState(events.slice(0, 3));
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openevent, setOpenEvent] = useState([]);
+  const [registerDisplay,setRegisterDisplay]=useState("notDisplay");
 
-  console.log(slides);
+  // console.log(slides);
 
   const onClickCard = () => {
     setVisible("Active");
@@ -38,6 +39,11 @@ export const EventProvider = ({ children }) => {
     setDisplay("notDisplay");
     setDisable("display");
   };
+  const onClickCloseRegister=()=>{
+    setDisplay("display");
+    setDisable("notDisplay");
+    setRegisterDisplay("notDisplay");
+  }
 
   return (
     <EventContext.Provider
@@ -58,6 +64,9 @@ export const EventProvider = ({ children }) => {
         setCurrentSlide,
         setOpenEvent,
         openevent,
+        setRegisterDisplay,
+        registerDisplay,
+        onClickCloseRegister
       }}
     >
       {children}
