@@ -1,0 +1,47 @@
+.event_card_container {
+  background: url('../../assets/images/eventCardBg.svg');
+  height: 321px;
+  width: 256px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.event_card_container_img{
+  width: 99%;
+  height: 99%;
+}
+.large {
+  height: 522px;
+  width: 449px;
+  background: url('../../assets/images/eventCardBgLarge.svg');
+}
+
+.small {
+  background: url('../../assets/images/eventCardBg.svg');
+  height: 247px;
+  width: 197px;
+  border-radius: 5px;
+  background-size: contain;
+}
+
+
+@media screen and (max-width: 1234px) {
+  .event_card_container {
+    height: 247px;
+    width: 197px;
+    background-size: contain;
+    border-radius: 5px;
+  }
+  .small{
+    height: 200px;
+    width: 160px;
+  }
+  .large{
+    height: 420px;
+    width: 360px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
