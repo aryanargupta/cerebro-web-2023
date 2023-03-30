@@ -9,28 +9,30 @@ function DashboardAboutCard({ name, instituteName, email, mobileNo }) {
   const auth = useAuth();
   const logout = () => {
     auth.logout();
-    redirect("/");
-  }
+    redirect('/');
+  };
   return (
     <div className="dashboard-about-card">
       <div className="dashboard-about-card__logo">
         <img src={logo} alt="" />
       </div>
-      <div className="dashboard-about-card__row">
-        <div className="dashboard-about-card__row__title">Name</div>
-        <div className="dashboard-about-card__row__value">{name}</div>
-      </div>
-      <div className="dashboard-about-card__row">
-        <div className="dashboard-about-card__row__title">Institute</div>
-        <div className="dashboard-about-card__row__value">{instituteName}</div>
-      </div>
-      <div className="dashboard-about-card__row">
-        <div className="dashboard-about-card__row__title">Email</div>
-        <div className="dashboard-about-card__row__value">{email}</div>
-      </div>
-      <div className="dashboard-about-card__row">
-        <div className="dashboard-about-card__row__title">Contact No.</div>
-        <div className="dashboard-about-card__row__value">{mobileNo}</div>
+      <div className="dashboard-about-card__parent">
+        <div className="dashboard-about-card__row">
+          <div className="dashboard-about-card__row__title">Name: </div>
+          <div className="dashboard-about-card__row__value">{name}</div>
+        </div>
+        <div className="dashboard-about-card__row">
+          <div className="dashboard-about-card__row__title">Institute: </div>
+          <div className="dashboard-about-card__row__value">{instituteName}</div>
+        </div>
+        <div className="dashboard-about-card__row">
+          <div className="dashboard-about-card__row__title">Email: </div>
+          <div className="dashboard-about-card__row__value">{email}</div>
+        </div>
+        <div className="dashboard-about-card__row">
+          <div className="dashboard-about-card__row__title">Contact No.: </div>
+          <div className="dashboard-about-card__row__value">{mobileNo}</div>
+        </div>
       </div>
       <div className="Links-outer">
         <div className="pass-reset-main">
@@ -51,7 +53,9 @@ function DashboardAboutCard({ name, instituteName, email, mobileNo }) {
           <Link to="/team">
             <p className="pass-reset-text">Team</p>
           </Link>
-          <p onClick={logout} className="pass-reset-text">Logout</p>
+          <p onClick={logout} className="pass-reset-text">
+            Logout
+          </p>
         </div>
       </div>
     </div>

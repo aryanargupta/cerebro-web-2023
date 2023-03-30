@@ -48,9 +48,6 @@ const Signup = () => {
           setSubmitStatus(false);
         }
       } catch (error) {
-        console.log(error);
-        console.log(res);
-        console.log(res.data.proof[0]);
         if(res.data?.proof[0]) {
           setFieldError("authentication", res.data.proof[0]);
           return;

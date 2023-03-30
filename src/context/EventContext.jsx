@@ -50,7 +50,6 @@ useEffect(()=>{
   // setOpenEvent(filterData);
   setSlides(filterData.slice(0, 3));
   setLoading(false);
-  
 },[selectEvent,events])
 
 

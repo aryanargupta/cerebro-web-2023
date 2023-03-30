@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Formik, Form } from 'formik';
 import { EventContext } from '../../context/EventContext';
 import close from '../../assets/images/cross.png';
-import img from "../../assets/images/alt_img.png";
+import img from '../../assets/images/alt_img.png';
 import prizeBorder from '../../assets/images/prize_border.png';
 import './ParticularEvent.scss';
 import axiosInstance from '../../services/AxiosInstance';
@@ -17,7 +17,7 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
   return (
     <div className="event-content">
       <div className="left-container">
-        <img src={openevent.image===""?img:openevent.image} alt="" />
+        <img src={openevent.image === '' ? img : openevent.image} alt="" />
       </div>
       <div className="right-container">
         <div className="event-title">
@@ -30,17 +30,30 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
           <div className="event-prize">
             {/* <img src={prizeBorder} alt="" /> */}
             <div className="prize_Worth">
-          <h3>PRIZES WORTH</h3>
+              <h3>PRIZES WORTH</h3>
             </div>
 
-            <div className="prize_amount">
-              {openevent.prize}
-            </div>
-
+            <div className="prize_amount">{openevent.prize}</div>
           </div>
           <div className="event-date">
-            <div className="event-date-in">{new Date(openevent.start_time).toLocaleString({ weekday: 'short', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })}</div>
-            <div className="event-date-out">{new Date(openevent.end_time).toLocaleString({ weekday: 'short', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })}</div>
+            <div className="event-date-in">
+              {new Date(openevent.start_time).toLocaleString({
+                weekday: 'short',
+                month: 'short',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+              })}
+            </div>
+            <div className="event-date-out">
+              {new Date(openevent.end_time).toLocaleString({
+                weekday: 'short',
+                month: 'short',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+              })}
+            </div>
           </div>
         </div>
         <div className="event-team">
@@ -51,11 +64,11 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
           </div>
 
           <div className="event-team-right">
-              <li>{openevent?.team_size}</li>
-              <li>{openevent?.contacts[0]?openevent?.contacts[0]?.name:"none"}</li>
-              <li>{openevent?.contacts[1]?openevent?.contacts[1]?.name:"none"}</li>
-            </div>
+            <li>{openevent?.team_size}</li>
+            <li>{openevent?.contacts[0] ? openevent?.contacts[0]?.name : 'none'}</li>
+            <li>{openevent?.contacts[1] ? openevent?.contacts[1]?.name : 'none'}</li>
           </div>
+        </div>
 
         <div className="event-btn-container">
           {openevent.is_registered ? (
@@ -144,8 +157,8 @@ function JoinTeam({ openevent }) {
         delete data.registration_data.event;
         if (!openevent.registration_attributes) delete data.registration_data;
         const res = await axiosInstance.post('/registration/teammember/', data);
-        if (res.data.error) setFieldError('event', res.data.error);
-        else setSubmitStatus(res.data.success);
+        if (res.data.error) alert(res.data.error);
+        else alert(res.data.success);
       } else {
         const data = {
           event: openevent.id,
@@ -155,10 +168,11 @@ function JoinTeam({ openevent }) {
         delete data.registration_data.event;
         if (!openevent.registration_attributes) delete data.registration_data;
         const res = await axiosInstance.post('/registration/individual-registration/', data);
-        if (res.data.error) setFieldError('event', res.data.error);
-        else setSubmitStatus(`Successfully registered for ${openevent.title}`);
+        if (res.data.error) alert(res.data.error);
+        else alert(`Successfully registered for ${openevent.title}`);
       }
     } catch (error) {
+      alert(error.response.data.error);
       setFieldError('event', error.response.data.error);
     }
     setSubmitting(false);
@@ -171,9 +185,8 @@ function JoinTeam({ openevent }) {
           <Form className="join-team__codee">
             {openevent.team_event && (
               <>
-               <div className='join-team__plcholder'>Join the team using a Team Code</div>
+                <div className="join-team__plcholder">Join the team using a Team Code</div>
                 <FormInput
-                  
                   // label="Join the team using a Team Code"
                   name="team_code"
                   type="text"
@@ -199,8 +212,8 @@ function JoinTeam({ openevent }) {
             ) : (
               <div className="join-team__message">No additional fields required for this event</div>
             )}
-            <button type="submit" disabled={isSubmitting} className="authbtn__button__enable">
-              <div className={`authbtn__button__enable__text`}>
+            <button type="submit" disabled={isSubmitting} className="auth_button_particular">
+              <div className={`auth_button_particular_text`}>
                 {isSubmitting ? <BtnLoader /> : !openevent.team_event ? 'Register' : 'Join Team'}
               </div>
             </button>
@@ -291,8 +304,8 @@ function CreateTeam({ openevent }) {
             <button
               type="submit"
               disabled={isSubmitting || submitStatus}
-              className="authbtn__button__enable">
-              <div className="authbtn__button__enable__text">
+              className="auth_button_particular">
+              <div className="auth_button_particular_text">
                 {isSubmitting ? <BtnLoader /> : 'Create Team'}
               </div>
             </button>
@@ -317,17 +330,17 @@ function CreateTeam({ openevent }) {
 function ParticularEvent() {
   const { visible, setVisible, onClickCard, display, setDisplay, onClickClose, events, openevent } =
     useContext(EventContext);
-    const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
   const [joinTeam, setJoinTeam] = useState(false);
   const [createTeam, setCreateTeam] = useState(false);
   const navigate = useNavigate();
   const enableJoinTeam = () => {
-    if(!isLoggedIn) navigate("/login");
+    if (!isLoggedIn) navigate('/login');
     setJoinTeam(true);
   };
-  
+
   const enableCreateTeam = () => {
-    if(!isLoggedIn) navigate("/login");
+    if (!isLoggedIn) navigate('/login');
     setCreateTeam(true);
   };
 

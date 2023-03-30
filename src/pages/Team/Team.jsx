@@ -9,6 +9,7 @@ import TeamMember from "./TeamMember";
 // import json from "./utils/Team.json";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import axiosInstance from "../../services/AxiosInstance";
+import Navbar from "../../components/navbar/Navbar";
 
 const teamOptionsArr = [
   "Core",
@@ -90,7 +91,7 @@ const  Team=()=> {
   return (
     
     <div className="team">
-    
+      <Navbar isLandingPage={!false}></Navbar>
                 
                   
             
