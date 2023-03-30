@@ -158,22 +158,24 @@ function JoinTeam({ openevent }) {
     <div className="join-team">
       <Formik {...{ validate, onSubmit }} initialValues={getInitialValues()}>
         {({ isSubmitting, errors }) => (
-          <Form className="join-team">
+          <Form className="join-team__codee">
             {openevent.team_event && (
               <>
+               <div className='join-team__plcholder'>Join the team using a Team Code</div>
                 <FormInput
-                  label="Join the team using a Team Code"
+                  
+                  // label="Join the team using a Team Code"
                   name="team_code"
                   type="text"
                   page="join-team"
                   disabled={submitStatus}
                 />
-                <hr className="join-team__line" />
+                {/* <hr className="join-team__line" /> */}
               </>
             )}
             {openevent.registration_attributes ? (
               Object.entries(openevent.registration_attributes).map(([key, value], index) => (
-                <div className="join-team__input" key={index}>
+                <div className="forminputss" key={index}>
                   <FormInput
                     label={key}
                     name={key}
@@ -262,7 +264,7 @@ function CreateTeam({ openevent }) {
               page="create-team"
               disabled={submitStatus}
             />
-            <hr className="create-team__line" />
+            {/* <hr className="create-team__line" /> */}
             {openevent.registration_attributes &&
               Object.entries(openevent.registration_attributes).map(([key], index) => (
                 <div className="create-team__input" key={index}>

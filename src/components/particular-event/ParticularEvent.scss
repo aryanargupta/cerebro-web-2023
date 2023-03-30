@@ -153,24 +153,60 @@ button {
 
 
 .join-team {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: url(../../assets/joinbg.png);
+  background-size: cover;
+  object-fit: contain;
+  border-right: 0.1px solid #336964;
+  height:100%;
+  background-repeat: no-repeat;
   width: 100%;
-
+  display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+   
+  
   &__line {
     border: none;
     border-top: 1.5px dashed #1ca0ff;
     height: 0px;
     width: 540px;
     margin: 10px 0px;
+    
 
     @media screen and (max-width: $mobile) {
       margin: 20px 0px;
       width: 100%;
     }
   }
+  &__plcholder{
+    color:#59D8DB;
+    font-family: Jost;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+  
+  }
+  &__codee{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    input{
+      // margin-left: 4rem;
+      background: url(../../assets/joine.png);
+      width:20vw;
+      height:6.4vh;
+      color:white;
+      margin-bottom: 2rem;
 
+    }
+    
+   }
+  
   &__input {
     margin: 5px 0px;
     width: 100%;
@@ -180,12 +216,13 @@ button {
   }
 
   &__message {
-    font-family: Barlow;
+    // font-family: Barlow;
     font-style: normal;
     font-weight: normal;
     font-size: 28px;
     color: #ffffff;
-    margin: 10px 10px;
+    margin-top:2rem;
+    // margin-right: 14rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -201,6 +238,15 @@ $mobile: 600px;
   align-items: center;
   width: 100%;
 
+  input{
+    // margin-left: 4rem;
+    background: url(../../assets/joine.png);
+    width:20vw;
+    height:6.4vh;
+    color:white;
+    margin-bottom: 2rem;
+  }
+
   &__line {
     border: none;
     border-top: 1.5px dashed #1ca0ff;
@@ -215,11 +261,8 @@ $mobile: 600px;
   }
 
   &__input {
-    margin: 5px 0px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    
   }
 
   &__success {
@@ -254,4 +297,23 @@ $mobile: 600px;
     padding: 10px;
     margin-bottom: 4px;
   }
+}
+
+.forminputss{
+ display: flex;
+ flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+// .forminputss div{
+//   display: flex;
+//   flex-direction: row !important;
+//   align-items: center;
+  
+  
+// }
+.authbtn__button__enable{
+  background-color: #226D6C;
+  // margin-left: 3rem;
+  margin-top: 2rem;
 }
