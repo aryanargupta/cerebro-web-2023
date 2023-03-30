@@ -41,9 +41,8 @@ function Landing() {
           <div className="landing_container_head_right">
             <div className="landing_container_head_right_top"> </div>
             <div className="landing_container_head_right_middle">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo optio neque et soluta a
-              non sapiente, esse excepturi est, ipsa incidunt fugit commodi odit ducimus veniam,
-              omnis dicta! Delectus, unde?
+              Join us on a journey into the future as we explore the latest advances in technology,
+              from artificial intelligence and robotics to space exploration and beyond.
             </div>
             <div className="landing_container_head_right_bottom">
               <div className="landing_container_head_right_btn_border">
