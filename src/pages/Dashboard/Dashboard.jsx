@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axiosInstance from '../../services/AxiosInstance';
 import DashboardTitle from '../../components/Dashboard/DashboardTitle';
 import DashboardInfoCard from '../../components/Dashboard/DashboardInfoCard';
-import DashboardEventCard from '../../components/Dashboard/Cards/dashboardEventCard';
+import DashboardEventCard from '../../components/Dashboard/Cards/DashboardEventCard';
 import './Dashboard.scss';
 import preg from '../../assets/preg.png';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
