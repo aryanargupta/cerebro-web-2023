@@ -9,14 +9,31 @@
   margin: auto;
 
   .team-header {
-    color: #59d8db;
+    color: inherit;
+    .activeon {
+      scale: (1.2);
+      color: #d0e89f;
+  }
+  
     a {
       text-decoration: inherit;
-      color: white;
+      color: inherit;
     }
     a:hover {
       scale: (1.2);
       color: #d0e89f;
+    }
+    .header-content {
+      width: 80%;
+      margin: -2rem auto;
+      display: flex;
+      text-align: center;
+      justify-content: space-evenly;
+  
+      li {
+        text-decoration: none;
+        list-style-type: none;
+      }
     }
   }
 
@@ -80,3 +97,4 @@
     height: 100vh;
   }
 }
+

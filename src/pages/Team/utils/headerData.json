@@ -1,26 +1,27 @@
 [
+
     {
-        "title": "Game",
+        "title":  "Core",
         "id": 1
     },
     {
-        "title": "Game",
+        "title": "PR",
         "id": 2
     },
     {
-        "title": "Game",
+        "title": "Core Support",
         "id": 3
     },
     {
-        "title": "Game",
+        "title":  "Web Dev",
         "id": 4
     },
     {
-        "title": "Game",
+        "title": "Design",
         "id": 5
     },
     {
-        "title": "Game",
+        "title":  "Sponsorship",
         "id": 6
     }
 ]

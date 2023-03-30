@@ -4,10 +4,12 @@ import axiosInstance from '../../services/AxiosInstance';
 import './faq.css';
 import rightArrow from '../../images/plus.png';
 import downArrow from '../../images/minus.png';
-
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 const Faqs = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    setIsLoading(true);
     async function fetchData() {
       var data = await axiosInstance.get('/faqs/');
       data = data.data;
@@ -15,6 +17,7 @@ const Faqs = () => {
       setData(data);
       // console.log(data);
       // setLoading(false);
+      setIsLoading(false);
     }
     fetchData();
   }, []);
@@ -28,6 +31,7 @@ const Faqs = () => {
     }
     setAccordian(index);
   }
+  if (isLoading) return <LoadingSpinner />;
   return (
     <>
       <div className="container">
@@ -38,7 +42,7 @@ const Faqs = () => {
           <div className="outerContainer">
             <div className="accordian__faq">
               {data.map((item, index) => (
-                <div key={index} onClick={() => toogleAccordian(index)}>
+                <div className="faqs__quesans" key={index} onClick={() => toogleAccordian(index)}>
                   <div className="question">
                     <div>
                       {accordian === index ? (
