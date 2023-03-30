@@ -12,7 +12,7 @@ export const EventProvider = ({ children }) => {
       data = data.data;
       // setCurrEvent(data[0]);
       setEvents(data);
-      // setLoading(false);
+      setLoading(false);
       setSlides(data.slice(0, 3));
     }
     fetchData();
@@ -24,8 +24,8 @@ export const EventProvider = ({ children }) => {
   const [slides, setSlides] = useState(events.slice(0, 3));
   const [currentSlide, setCurrentSlide] = useState(0);
   const [openevent, setOpenEvent] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  console.log(slides);
 
   const onClickCard = () => {
     setVisible("Active");
@@ -58,6 +58,7 @@ export const EventProvider = ({ children }) => {
         setCurrentSlide,
         setOpenEvent,
         openevent,
+        loading,
       }}
     >
       {children}

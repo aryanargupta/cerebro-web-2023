@@ -11,7 +11,7 @@ function DashboardEventCard({ eventsData }) {
         <div className="events__header__eventName">EVENT</div>
         <div className="events__header__eventDate">DATE</div>
         <div className="events__header__eventName">TIME</div>
-        <div className="events__header__eventName">TEAN SIZE</div>
+        <div className="events__header__eventName">TEAM SIZE</div>
         <div className="events__header__eventName">TEAM NAME</div>
         <div className="events__header__eventName">STATUS</div>
       </div>
@@ -29,7 +29,11 @@ function DashboardEventCard({ eventsData }) {
             <div className="events__data__eventTeamSize">
               {event.noMembersInTeam}/{event.teamMaxCapacity}
             </div>
-            <div className="events__data__eventTeamName">{event.teamName}</div>
+            <div className="events__data__eventTeamName">
+              {event.teamName}
+              <br />
+              {event.teamCode}
+            </div>
             <div className="events__data__eventStatus">
               {event.isTeamFull ? (
                 <div>
@@ -39,7 +43,7 @@ function DashboardEventCard({ eventsData }) {
               ) : (
                 <div>
                   <img style={{ marginRight: '10px' }} src={cross} alt="" />
-                  <p style={{ color: '#E75F87' }}>Completed</p>
+                  <p style={{ color: '#E75F87' }}>Team not complete</p>
                 </div>
               )}
             </div>

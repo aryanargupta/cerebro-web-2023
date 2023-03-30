@@ -5,9 +5,11 @@ import DashboardInfoCard from '../../components/Dashboard/DashboardInfoCard';
 import DashboardEventCard from '../../components/Dashboard/Cards/DashboardEventCard';
 import './Dashboard.scss';
 import preg from '../../assets/preg.png';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 function Dashboard() {
   const [userData, setUserData] = useState({ infoCardData: {}, eventsSectionData: [] });
+  const [isLoading, setIsLoading] = useState(true);
 
   const getInfoCardData = (fetchedData) => {
     const isInfoCardDataPresent = fetchedData && fetchedData.personal_details;
@@ -15,7 +17,7 @@ function Dashboard() {
       ? {
           name:
             fetchedData.personal_details.first_name + ' ' + fetchedData.personal_details.last_name,
-      instituteName: fetchedData.personal_details.institute_name,
+          instituteName: fetchedData.personal_details.institute_name,
           email: fetchedData.personal_details.email,
           mobileNo: fetchedData.personal_details.mobile_number,
         }
@@ -44,7 +46,7 @@ function Dashboard() {
             registrationData: event.registration_data,
             submissionData: event.submission_data,
             teamName: event.team_name,
-
+            teamCode: event.team_code,
             noMembersInTeam: event.current_size,
             teamMaxCapacity: event.max_size,
             isTeamFull: event.is_full,
@@ -54,14 +56,18 @@ function Dashboard() {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     axiosInstance
       .get('https://cerebro-2023-backend.onrender.com/account/dashboard/')
       .then((res) => {
         const infoCardData = getInfoCardData(res.data);
         const eventsSectionData = getEventsSectionData(res.data);
         setUserData({ infoCardData, eventsSectionData });
+        setIsLoading(false);
       });
   }, []);
+
+  if (isLoading) return <LoadingSpinner />;
 
   return (
     <div className="dashboard">

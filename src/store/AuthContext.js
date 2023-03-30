@@ -7,11 +7,12 @@ const AuthContext = createContext({
   logout: () => {},
 });
 
-export const AuthContextProvider = ({ children }) => {
+export function AuthContextProvider({ children }) {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const isLoggedIn = !!token;
 
   const login = (tkn) => {
+    console.log(tkn);
     localStorage.setItem('token', tkn);
     setToken(tkn);
   };
@@ -21,9 +22,17 @@ export const AuthContextProvider = ({ children }) => {
     setToken(null);
   };
 
-  const memoedValue = useMemo(() => ({ token, login, logout, isLoggedIn }), [token, isLoggedIn]);
+  const memoedValue = useMemo(
+    () => ({
+      token,
+      isLoggedIn,
+      login,
+      logout,
+    }),
+    [token, isLoggedIn],
+  );
 
   return <AuthContext.Provider value={memoedValue}>{children}</AuthContext.Provider>;
-};
+}
 
 export default AuthContext;

@@ -27,7 +27,7 @@ function DashboardAboutCard({ name, instituteName, email, mobileNo }) {
       </div>
 
       <div className="pass-reset-main">
-        <Link to="/change-password">
+        <Link to="/reset-password">
           <p className="pass-reset-text">Reset Password</p>
         </Link>
       </div>

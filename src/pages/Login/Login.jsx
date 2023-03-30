@@ -20,7 +20,7 @@ function Login() {
       const res = await axiosInstance.post('/account/login/', values);
       auth.login(res.data.Token);
       if (location.state?.from) navigate(location.state.from);
-      else navigate('/landing');
+      else navigate('/dashboard');
     } catch (error) {
       console.log(error);
       let message = 'Invalid email or password';
