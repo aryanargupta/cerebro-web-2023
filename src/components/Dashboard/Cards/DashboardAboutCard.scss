@@ -1,0 +1,78 @@
+.dashboard-about-card{
+    background: url(../../../assets/dashboard_bg2.png);
+    border: 0.1px solid grey;
+    // border: 0.1px solid white;
+    background-repeat: no-repeat;
+    // opacity: 0.3;
+//    height:100%;
+    // z-index: -1;
+    margin: 2rem;
+    margin-top: 0;
+    min-height: 70%;
+  
+    &  img{
+        margin:0 6rem;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+    }
+    &__row{
+        display: flex;
+       margin:1rem 0px;
+       
+    }
+    &__row__title{
+       
+        flex:1;
+        color:#59D8DB;
+        margin:2px 20px;
+        font-size: 14px;
+       
+        // width:7%;
+    }
+    &__row__value{
+       font-weight: 600;
+        flex:2;
+        width:17vw;
+       margin: 0;
+        color: white;
+        
+        justify-content: left;
+        font-size: 12px;
+        
+
+    }
+
+
+}
+
+.pass-reset-text{
+    color:#B8FFE1;
+    margin:4rem 2rem;
+    text-decoration: none;
+}
+
+@media (max-width:1224px){
+    .dashboard-about-card{
+        width:30vw;
+        min-height: 70%;
+        margin-top: 0rem;
+        margin-left:1rem;
+        margin-right: 1rem;
+        &  img{
+            margin:0 4.5rem;
+            margin-top: 3rem;
+        margin-bottom: 5rem;
+
+        }
+        &__row__title{
+            font-size: 11px;
+
+        }
+        &__row__value{
+            font-size: 9px;
+        }
+    }
+    .pass-reset-text{
+        font-size: 12px;
+    }
+}
