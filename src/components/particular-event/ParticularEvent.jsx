@@ -8,6 +8,8 @@ import './ParticularEvent.scss';
 import axiosInstance from '../../services/AxiosInstance';
 import FormInput from '../FormInput/FormInput';
 import BtnLoader from '../BtnLoader/BtnLoader';
+import useAuth from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClose }) {
   console.log(openevent);
@@ -307,14 +309,17 @@ function CreateTeam({ openevent }) {
 function ParticularEvent() {
   const { visible, setVisible, onClickCard, display, setDisplay, onClickClose, events, openevent } =
     useContext(EventContext);
+    const { isLoggedIn } = useAuth();
   const [joinTeam, setJoinTeam] = useState(false);
   const [createTeam, setCreateTeam] = useState(false);
-
+  const navigate = useNavigate();
   const enableJoinTeam = () => {
+    if(!isLoggedIn) navigate("/login");
     setJoinTeam(true);
   };
-
+  
   const enableCreateTeam = () => {
+    if(!isLoggedIn) navigate("/login");
     setCreateTeam(true);
   };
 
