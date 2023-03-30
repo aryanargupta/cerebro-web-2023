@@ -20,7 +20,7 @@
        margin:1rem 0px;
        
     }
-    &__row__title{
+    &_row_title{
        
         flex:1;
         color:#59D8DB;
@@ -29,7 +29,7 @@
        
         // width:7%;
     }
-    &__row__value{
+    &_row_value{
        font-weight: 600;
         flex:2;
         width:17vw;
@@ -47,8 +47,6 @@
 
 .pass-reset-text{
     color:#B8FFE1;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     margin:1rem 2rem;
     text-decoration: none;
 }
@@ -57,17 +55,6 @@
     display:flex;
 }
 
-=======
-=======
->>>>>>> Stashed changes
-    margin:4rem 2rem;
-    text-decoration: none;
-}
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 @media (max-width:1224px){
     .dashboard-about-card{
         width:30vw;
@@ -81,11 +68,11 @@
         margin-bottom: 5rem;
 
         }
-        &__row__title{
+        &_row_title{
             font-size: 11px;
 
         }
-        &__row__value{
+        &_row_value{
             font-size: 9px;
         }
     }
