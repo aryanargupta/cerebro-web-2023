@@ -9,6 +9,7 @@ import Events from './pages/Events/Events';
 import Team from './pages/Team/Team';
 import Faqs from './pages/FAQs/Faqs';
 import Timeline from './pages/Timeline/Timeline';
+import Dashboard from './pages/Dashboard/Dashboard';
 // import Navbar from './components/Navbar';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 
@@ -22,6 +23,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/events" element={<Events />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       {/* <Route path="/sponsors" element={<Sponsors />} /> */}
       {/* <Route path="/landing" element={<Landing />} /> */}
       <Route path="/team" element={<Team />} />

@@ -1,0 +1,19 @@
+@import '../fonts.css';
+
+.dashboard__title-cont{
+&_heading{
+    text-align: center;
+    font-family: 'tech_zone_demo';
+    font-weight: 900;
+    font-size: 2rem;
+    color: #59D8DB;
+    padding: 4rem;
+}
+}
+
+
+// .dashboard__title{
+//     font-family: tech_zone_demo;
+//     font-weight: 700;
+
+// }

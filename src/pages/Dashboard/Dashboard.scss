@@ -1,0 +1,15 @@
+.dashboard{
+    background: url(../../assets/Dasshboard_bg.png);
+    height:100vh;
+    width: 100vw;
+    
+    &__content{
+        display: flex;
+       
+    }
+}
+.PleaseRegister{
+  margin-top: 10%;
+
+   margin-left: 20%;
+}
