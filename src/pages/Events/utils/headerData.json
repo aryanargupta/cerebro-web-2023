@@ -1,26 +1,19 @@
 [
     {
-        "title": "Game",
+        "title": "Tech",
+        "event_type": "tech",
         "id": 1
     },
     {
-        "title": "Game",
+        "title": "Gaming",
+        "event_type": "gaming",
         "id": 2
     },
     {
-        "title": "Game",
+        "title": "Design",
+        "event_type": "design-photo",
         "id": 3
-    },
-    {
-        "title": "Game",
-        "id": 4
-    },
-    {
-        "title": "Game",
-        "id": 5
-    },
-    {
-        "title": "Game",
-        "id": 6
     }
+   
+    
 ]

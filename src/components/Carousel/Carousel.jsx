@@ -17,15 +17,15 @@ const Carousel = () => {
     disable,
     setDisable,
     setCss,
-    events,
+    selectSlide,
     currentSlide,
     setCurrentSlide,
     slides,
-    setSlides,
+    setSlides
   } = useContext(EventContext);
 
   // const [currentSlide, setCurrentSlide] = useState(0);
-  // const [slides, setSlides] = useState(events.slice(0, 3));
+  // const [slides, setSlides] = useState(selectSlide.slice(0, 3));
 
   // const [left,setLeft]=useState('left');
   useEffect(() => {
@@ -40,18 +40,18 @@ const Carousel = () => {
 
   const nextSlide = async () => {
     const nextSlideIndex =
-      currentSlide === events.length - 3
+      currentSlide === selectSlide.length - 3
         ? currentSlide
-        : (currentSlide + 1) % events.length;
+        : (currentSlide + 1) % selectSlide.length;
 
-    setSlides(events.slice(nextSlideIndex, nextSlideIndex + 3));
+    setSlides(selectSlide.slice(nextSlideIndex, nextSlideIndex + 3));
     setCurrentSlide(nextSlideIndex);
   };
 
   const previousSlide = () => {
     const previousSlideIndex =
       currentSlide === 0 ? currentSlide : currentSlide - 1;
-    setSlides(events.slice(previousSlideIndex, previousSlideIndex + 3));
+    setSlides(selectSlide.slice(previousSlideIndex, previousSlideIndex + 3));
     setCurrentSlide(previousSlideIndex);
   };
   // let className = `carousel ${visible}`;
@@ -77,7 +77,7 @@ const Carousel = () => {
           <img
             className={`${disable}`}
             src={
-              currentSlide === events.length - 3
+              currentSlide === selectSlide.length - 3
                 ? { Style: { display: "none" } }
                 : right
             }

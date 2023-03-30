@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Formik, Form } from 'formik';
 import { EventContext } from '../../context/EventContext';
 import close from '../../assets/images/cross.png';
-import img from '../../assets/images/event-img.png';
+import img from "../../assets/images/alt_img.png";
 import prizeBorder from '../../assets/images/prize_border.png';
 import './ParticularEvent.scss';
 import axiosInstance from '../../services/AxiosInstance';
@@ -17,7 +17,7 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
   return (
     <div className="event-content">
       <div className="left-container">
-        <img src={img} alt="" />
+        <img src={openevent.image===""?img:openevent.image} alt="" />
       </div>
       <div className="right-container">
         <div className="event-title">
@@ -28,11 +28,19 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
         </div>
         <div className="event-time">
           <div className="event-prize">
-            <img src={prizeBorder} alt="" />
+            {/* <img src={prizeBorder} alt="" /> */}
+            <div className="prize_Worth">
+          <h3>PRIZES WORTH</h3>
+            </div>
+
+            <div className="prize_amount">
+              {openevent.prize}
+            </div>
+
           </div>
           <div className="event-date">
-            <div className="event-date-in">{new Date(openevent.start_time).toDateString()}</div>
-            <div className="event-date-out">{new Date(openevent.end_time).toDateString()}</div>
+            <div className="event-date-in">{new Date(openevent.start_time).toLocaleString({ weekday: 'short', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })}</div>
+            <div className="event-date-out">{new Date(openevent.end_time).toLocaleString({ weekday: 'short', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })}</div>
           </div>
         </div>
         <div className="event-team">
@@ -43,11 +51,11 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
           </div>
 
           <div className="event-team-right">
-            <li>4</li>
-            <li>Converner</li>
-            <li>Co-Converner</li>
+              <li>{openevent?.team_size}</li>
+              <li>{openevent?.contacts[0]?openevent?.contacts[0]?.name:"none"}</li>
+              <li>{openevent?.contacts[1]?openevent?.contacts[1]?.name:"none"}</li>
+            </div>
           </div>
-        </div>
 
         <div className="event-btn-container">
           {openevent.is_registered ? (

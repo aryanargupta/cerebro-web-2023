@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import "./Card.scss";
-import img from "../../assets/images/img1.png";
+import img from "../../assets/images/alt_img.png";
 import left from "../../assets/images/leftArrow.png";
 import data from "../../pages/Events/utils/Events.json";
 import axios from "axios";
@@ -20,6 +20,7 @@ const Card = (props) => {
     setVisible("Active");
     setDisplay("display");
     setDisable("notDisplay");
+    console.log(slide);
     setOpenEvent(slide);
   };
 
@@ -28,8 +29,8 @@ const Card = (props) => {
   return (
     <div className={`card ${css}`} onClick={onClickCard}>
       <div className="eventImg">
-        <img src={img} alt="" />
-        <p>{slide.title}</p>
+        <img src={slide.image===""?img:slide.image} alt="" />
+      
       </div>
       <div className="imgArrow">
         <img src={left} alt="" />

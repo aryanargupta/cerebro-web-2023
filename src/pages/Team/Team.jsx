@@ -6,7 +6,9 @@ import Carousel from "../../components/Carousel/Carousel";
 import left from "../../assets/images/leftArrow.png";
 import right from "../../assets/images/rightArrow.png";
 import TeamMember from "./TeamMember";
-import json from "./utils/Team.json";
+// import json from "./utils/Team.json";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import axiosInstance from "../../services/AxiosInstance";
 
 const teamOptionsArr = [
   "Core",
@@ -18,40 +20,52 @@ const teamOptionsArr = [
   "Gaming",
   "Sponsorship",
 ];
-function Team() {
-  const [teamData, setTeamData] = useState(json.slice(0, 6));
+const  Team=()=> {
+
+  useEffect(() => {
+        axiosInstance.get("/teams").then(res => setTeamData(res.data));
+    }, []);
+    const [isActive,setActive]=useState("Core");
+
+
+  const [teamData, setTeamData] = useState([]);
+  const [currTeam,setCurrTeam]=useState([]);
   const [selectedTeam, setSelectedTeam] = useState("Core");
-  const [selectedTeamData, setSelectedTeamData] = useState([]);
+  const [selectedTeamData, setSelectedTeamData] = useState(currTeam.slice(0,6));
   const [lastMember, setLastMember] = useState(6);
   const [visibleLeft, setVisibleLeft] = useState(true);
-
+  const [showLoadingSpinner, setShowLoadingSpinner] = useState(true);
   const [visibleRight, setVisibleRight] = useState(false);
+  
   useEffect(() => {
-    if (json.length < 6) setVisibleRight(() => true);
-  }, []);
-  //   useEffect(() => {
-  //     // axiosInstance.get("/teams").then(res => setTeamData(res.data));
-  //     if(lastMember+6>json.length){
-  //       setTeamData(json.slice(lastMember,json.length));
-  //       setLastMember(()=>json.length);
-  //     }
-  //     else{
-  //       setTeamData(json.slice(lastMember,lastMember+6));
-  //       setLastMember(()=>lastMember+6);
-  //     }
+        setShowLoadingSpinner(true);
+        for (let i in teamData) {
+            if (i === selectedTeam) {
+              setCurrTeam(teamData[i]);
+              setSelectedTeam(i);
+              setSelectedTeamData(teamData[i].slice(0,6));
+            }
+        }
+        setShowLoadingSpinner(false);
+    }, [selectedTeam, teamData]);
 
-  // }, []);
+   
+
+  useEffect(() => {
+    if (currTeam.length < 6) setVisibleRight(() => true);
+  }, []);
+  
 
   const nextTeamMember = () => {
     // const nextMember = lastMember === json.length ? lastMember : (lastMember + 6) ;
     let nextMember = lastMember;
     console.log(nextMember);
     setVisibleLeft(false);
-    if (nextMember + 6 > json.length) {
+    if (nextMember + 6 > currTeam.length) {
       setVisibleRight(true);
-      setTeamData(json.slice(nextMember, json.length));
+      setSelectedTeamData(currTeam.slice(nextMember, currTeam.length));
     } else {
-      setTeamData(json.slice(nextMember, nextMember + 6));
+      setSelectedTeamData(currTeam.slice(nextMember, nextMember + 6));
       nextMember = nextMember + 6;
     }
     setLastMember(nextMember);
@@ -62,11 +76,11 @@ function Team() {
     setVisibleRight(false);
 
     if (previousMember == 6) {
-      setTeamData(json.slice(0, previousMember));
+      setSelectedTeamData(currTeam.slice(0, previousMember));
       previousMember = 6;
       setVisibleLeft(true);
     } else {
-      setTeamData(json.slice(previousMember - 6, previousMember));
+      setSelectedTeamData(currTeam.slice(previousMember - 6, previousMember));
       previousMember = previousMember - 6;
     }
 
@@ -74,9 +88,24 @@ function Team() {
   };
 
   return (
+    
     <div className="team">
+    
+                
+                  
+            
       <div className="team-header">
-        <Header title={"Ours Team"} data={data} />
+        <Header title={"Ours Team"} />
+        <div className="header-content">
+        {data.map((i) => (
+       
+          <a className={i.title===isActive?"activeon":""} href="#" key={i.id} onClick={()=> { setSelectedTeam(i.title);setActive(i.title) ;console.log(i.title);}} >
+            {i.title}
+          </a>
+          
+        ))}
+      </div>
+      
       </div>
 
       <div className="team-container">
@@ -88,14 +117,16 @@ function Team() {
           />
         </div>
         <div className="team-inner-container">
-          {teamData.map((items) => (
+
+          {selectedTeamData.map((items) => (
             <TeamMember
               key={items.id}
-              img={items.img}
-              pos={items.pos}
+              img={items.profilepic}
+              pos={items.role}
               name={items.name}
             />
           ))}
+        
         </div>
         <div className="right">
           <img
@@ -105,6 +136,7 @@ function Team() {
           />
         </div>
       </div>
+     
     </div>
   );
 }

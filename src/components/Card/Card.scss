@@ -8,7 +8,16 @@
   align-items: center;
   width: 15rem;
   height: 18rem;
-
+  .eventImg{
+    
+    img{
+   position: relative;
+    width: 150px;
+height: 190px;
+border-radius: 15px;
+top: -9px;
+    }
+  }
   .eventImg:hover {
     transition: background-color 2s ease-out;
     // webkit-filter: blur(4px);
