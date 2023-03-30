@@ -49,7 +49,7 @@ function Dashboard() {
             teamCode: event.team_code,
             noMembersInTeam: event.current_size,
             teamMaxCapacity: event.max_size,
-            isTeamFull: event.is_full,
+            isTeamFull: event.is_team_event ? event.is_full : true,
           };
         })
       : [];
@@ -57,14 +57,12 @@ function Dashboard() {
 
   useEffect(() => {
     setIsLoading(true);
-    axiosInstance
-      .get('account/dashboard/')
-      .then((res) => {
-        const infoCardData = getInfoCardData(res.data);
-        const eventsSectionData = getEventsSectionData(res.data);
-        setUserData({ infoCardData, eventsSectionData });
-        setIsLoading(false);
-      });
+    axiosInstance.get('account/dashboard/').then((res) => {
+      const infoCardData = getInfoCardData(res.data);
+      const eventsSectionData = getEventsSectionData(res.data);
+      setUserData({ infoCardData, eventsSectionData });
+      setIsLoading(false);
+    });
   }, []);
 
   if (isLoading) return <LoadingSpinner />;

@@ -5,6 +5,8 @@ import './faq.css';
 import rightArrow from '../../images/plus.png';
 import downArrow from '../../images/minus.png';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import NavBar from '../../components/navbar/Navbar';
+
 const Faqs = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,16 +15,12 @@ const Faqs = () => {
     async function fetchData() {
       var data = await axiosInstance.get('/faqs/');
       data = data.data;
-      // setCurrEvent(data[0]);
       setData(data);
-      // console.log(data);
-      // setLoading(false);
       setIsLoading(false);
     }
     fetchData();
   }, []);
 
-  // const [data, setData] = useState(question);
   const [accordian, setAccordian] = useState(-1);
   function toogleAccordian(index) {
     if (index === accordian) {
@@ -35,6 +33,7 @@ const Faqs = () => {
   return (
     <>
       <div className="container">
+        <NavBar isLandingPage={!false}></NavBar>
         <div>
           <span className="accordian__title">FAQs</span>
         </div>
