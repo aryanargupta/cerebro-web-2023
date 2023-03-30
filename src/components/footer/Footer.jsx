@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss';
+// import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -20,7 +21,17 @@ function Footer() {
         <div className="footer_container_right_right">
           <div className="footer_container_right_right_details">
             <div className="footer_container_right_right_mail_icon"> </div>
-            <div className="footer_container_right_right_text">cerebro@iiitvadodara.ac.in</div>
+            <a
+              href="mailto:cerebro@iiitvadodara.ac.in"
+              className="footer_container_right_right_text">
+              cerebro@iiitvadodara.ac.in
+            </a>
+            {/* <Link
+              to="javascript:void(0)"
+              className="footer_container_right_right_text"
+              onClick={() => (window.location = 'mailto:cerebro@iiitvadodara.ac.in')}>
+              cerebro@iiitvadodara.ac.in
+            </Link> */}
           </div>
           <div className="footer_container_right_right_details">
             <div className="footer_container_right_right_phone_icon"> </div>
@@ -31,11 +42,19 @@ function Footer() {
           </div>
           <div className="footer_container_right_right_details">
             <div className="footer_container_right_right_instagram_icon"> </div>
-            <div className="footer_container_right_right_text">@cerebro_iiitv</div>
+            <a
+              href="https://www.instagram.com/cerebro.iiitv/"
+              className="footer_container_right_right_text">
+              @cerebro_iiitv
+            </a>
           </div>
           <div className="footer_container_right_right_details">
             <div className="footer_container_right_right_twitter_icon"> </div>
-            <div className="footer_container_right_right_text">@cerebro_iiitv</div>
+            <a
+              href="https://twitter.com/cerebro_iiitv"
+              className="footer_container_right_right_text">
+              @cerebro_iiitv
+            </a>
           </div>
         </div>
       </div>
