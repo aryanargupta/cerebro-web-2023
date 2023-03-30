@@ -27,7 +27,11 @@ function DashboardEventCard({ eventsData }) {
               {event.startTime}-{event.endTime}
             </div>
             <div className="events__data__eventTeamSize">
+              {event.isTeamEvent ? (
+              <>
               {event.noMembersInTeam}/{event.teamMaxCapacity}
+              </>
+              ):(<p>-</p>)}
             </div>
             <div className="events__data__eventTeamName">
               {event.teamName}

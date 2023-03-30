@@ -37,6 +37,7 @@ const Signup = () => {
           degree: values.degree,
         };
         res = await axiosInstance.post('/account/signup/', data);
+        console.log(res);
         if (res.status === 201) {
           setSubmitStatus(true);
         } else if (res.data.email[0]) {
@@ -47,6 +48,13 @@ const Signup = () => {
           setSubmitStatus(false);
         }
       } catch (error) {
+        console.log(error);
+        console.log(res);
+        console.log(res.data.proof[0]);
+        if(res.data?.proof[0]) {
+          setFieldError("authentication", res.data.proof[0]);
+          return;
+        }
         setFieldError('authentication', res.data || res.error || 'Error');
       }
     }

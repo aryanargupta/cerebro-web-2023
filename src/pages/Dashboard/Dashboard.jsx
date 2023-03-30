@@ -58,7 +58,7 @@ function Dashboard() {
   useEffect(() => {
     setIsLoading(true);
     axiosInstance
-      .get('https://cerebro-2023-backend.onrender.com/account/dashboard/')
+      .get('account/dashboard/')
       .then((res) => {
         const infoCardData = getInfoCardData(res.data);
         const eventsSectionData = getEventsSectionData(res.data);
