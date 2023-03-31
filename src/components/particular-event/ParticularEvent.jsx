@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Formik, Form } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import { EventContext } from '../../context/EventContext';
 import close from '../../assets/images/cross.png';
 import img from '../../assets/images/alt_img.png';
@@ -9,7 +10,6 @@ import axiosInstance from '../../services/AxiosInstance';
 import FormInput from '../FormInput/FormInput';
 import BtnLoader from '../BtnLoader/BtnLoader';
 import useAuth from '../../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
 
 function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClose }) {
   console.log(openevent);
@@ -118,7 +118,7 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
   );
 }
 
-function JoinTeam({ openevent }) {
+function JoinTeam({ openevent, setJoin }) {
   const [submitStatus, setSubmitStatus] = useState('');
 
   const getInitialValues = () => {
@@ -178,6 +178,9 @@ function JoinTeam({ openevent }) {
     setSubmitting(false);
   };
 
+  const handleCloseJoinTeam = () => {
+    setJoin(false);
+  };
   return (
     <div className="join-team">
       <Formik {...{ validate, onSubmit }} initialValues={getInitialValues()}>
@@ -212,11 +215,23 @@ function JoinTeam({ openevent }) {
             ) : (
               <div className="join-team__message">No additional fields required for this event</div>
             )}
-            <button type="submit" disabled={isSubmitting} className="auth_button_particular">
-              <div className={`auth_button_particular_text`}>
-                {isSubmitting ? <BtnLoader /> : !openevent.team_event ? 'Register' : 'Join Team'}
-              </div>
-            </button>
+            <div style={{ width: '100%', justifyContent: 'space-evenly', display: 'flex' }}>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="auth_button_particular"
+                style={{ cursor: 'pointer' }}>
+                <div className="auth_button_particular_text">
+                  {isSubmitting ? <BtnLoader /> : !openevent.team_event ? 'Register' : 'Join Team'}
+                </div>
+              </button>
+              <button
+                onClick={handleCloseJoinTeam}
+                className="auth_button_particular"
+                style={{ cursor: 'pointer' }}>
+                <div className="auth_button_particular_text">Cancel</div>
+              </button>
+            </div>
           </Form>
         )}
       </Formik>
@@ -224,7 +239,7 @@ function JoinTeam({ openevent }) {
   );
 }
 
-function CreateTeam({ openevent }) {
+function CreateTeam({ openevent, setCreate }) {
   const [teamCode, setTeamCode] = useState('');
   const [submitStatus, setSubmitStatus] = useState('');
 
@@ -275,8 +290,12 @@ function CreateTeam({ openevent }) {
     }
   };
 
+  const handleCloseCreateTeam = () => {
+    setCreate(false);
+  };
   return (
     <div className="join-team">
+      <button onClick={handleCloseCreateTeam}>Close</button>
       <Formik {...{ validate, onSubmit }} initialValues={getInitialValues()}>
         {({ isSubmitting, errors }) => (
           <Form className="create-team">
@@ -301,14 +320,29 @@ function CreateTeam({ openevent }) {
                   />
                 </div>
               ))}
-            <button
-              type="submit"
-              disabled={isSubmitting || submitStatus}
-              className="auth_button_particular">
-              <div className="auth_button_particular_text">
-                {isSubmitting ? <BtnLoader /> : 'Create Team'}
-              </div>
-            </button>
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'space-evenly',
+                alignItems: 'center',
+              }}>
+              <button
+                type="submit"
+                disabled={isSubmitting || submitStatus}
+                className="auth_button_particular"
+                style={{ cursor: 'pointer' }}>
+                <div className="auth_button_particular_text">
+                  {isSubmitting ? <BtnLoader /> : 'Create Team'}
+                </div>
+              </button>
+              <button
+                onClick={handleCloseCreateTeam}
+                className="auth_button_particular"
+                style={{ cursor: 'pointer' }}>
+                <div className="auth_button_particular_text">Cancel</div>
+              </button>
+            </div>
             {submitStatus && (
               <>
                 <div className="eventbtn__status__success">
@@ -328,11 +362,9 @@ function CreateTeam({ openevent }) {
 }
 
 function ParticularEvent() {
-  const { visible, setVisible, onClickCard, display, setDisplay, onClickClose, events, openevent } =
+  const { visible, setVisible, onClickCard, display, setDisplay, onClickClose, events, openevent, joinTeam, setJoinTeam, createTeam, setCreateTeam } =
     useContext(EventContext);
   const { isLoggedIn } = useAuth();
-  const [joinTeam, setJoinTeam] = useState(false);
-  const [createTeam, setCreateTeam] = useState(false);
   const navigate = useNavigate();
   const enableJoinTeam = () => {
     if (!isLoggedIn) navigate('/login');
@@ -355,8 +387,8 @@ function ParticularEvent() {
           onClickClose={onClickClose}
         />
       )}
-      {joinTeam && <JoinTeam openevent={openevent} />}
-      {createTeam && <CreateTeam openevent={openevent} />}
+      {joinTeam && <JoinTeam openevent={openevent} setJoin={setJoinTeam} />}
+      {createTeam && <CreateTeam openevent={openevent} setCreate={setCreateTeam} />}
     </div>
   );
 }

@@ -21,7 +21,7 @@ const Carousel = () => {
     currentSlide,
     setCurrentSlide,
     slides,
-    setSlides
+    setSlides,
   } = useContext(EventContext);
 
   // const [currentSlide, setCurrentSlide] = useState(0);

@@ -23,15 +23,18 @@ function Events() {
     setOpenEvent,
     slides,
     openevent,
+    setJoinTeam,
+    setCreateTeam,
+    onClickClose,
   } = useContext(EventContext);
 
   // if (loading)   return <LoadingSpinner />;
 
   return !loading ? (
     <div className="event">
-      <Navbar isLandingPage={!false}></Navbar>
+      <Navbar isLandingPage={!false} />
       <div className="event-header">
-        <Header title={'Events'} />
+        <Header title="Events" />
         <div className="header-content">
           {data.map((i) => (
             <a
@@ -41,6 +44,9 @@ function Events() {
               onClick={() => {
                 setSelectedEvent(i.event_type);
                 console.log(i.event_type);
+                setJoinTeam(false);
+                setCreateTeam(false);
+                onClickClose();
               }}>
               {i.title}
             </a>
