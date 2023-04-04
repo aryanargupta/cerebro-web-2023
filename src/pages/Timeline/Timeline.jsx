@@ -9,7 +9,7 @@ import Navbar from '../../components/navbar/Navbar';
 function Timeline() {
   return (
     <div className="background">
-      <Navbar />
+      <Navbar isLandingPage={!false} />
       <div className="timeline_container_title"> </div>
       <div className="timeline_container">
         <div className="timeline_container_left">

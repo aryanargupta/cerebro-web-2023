@@ -14,7 +14,6 @@ import ResetPassword from './pages/ResetPassword/ResetPassword';
 import ChangePassword from './pages/ChangePassword/ChangePassword';
 import PrivateRoute from './components/RouteElements/PrivateRoute';
 import PublicRoute from './components/RouteElements/PublicRoute';
-import useAuth from './hooks/useAuth';
 import './App.scss';
 
 function App() {

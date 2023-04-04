@@ -59,8 +59,8 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
         <div className="event-team">
           <div className="event-team-left">
             <li>Team Size</li>
-            <li>Converner</li>
-            <li>Co-Converner</li>
+            <li>Convenor</li>
+            <li>Co-Convenor</li>
           </div>
 
           <div className="event-team-right">

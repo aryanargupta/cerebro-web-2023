@@ -11,7 +11,7 @@ function FormInput({ label, name, type, page, disabled }) {
       {/* eslint-disable-next-line */}
       <label className="forminput__label">{label}</label>
       <Field
-        placeholder={label === 'Proof of pursuing UG' ? 'Paste a Google Drive Link' : label}
+        placeholder={label === 'Proof of pursuing UG' ? 'Use valid file link, not folder link from google drive' : label}
         {...{ name, type, disabled }}
         as={`${'input'}`}
         className={`forminput__field ${custom}`}
