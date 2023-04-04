@@ -12,14 +12,21 @@ $mobile: 600px;
     &__status {
       &__error {
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 400;
         color: #ff0033;
       }
 
       &__success {
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 400;
         color: #12ca50;
+        width: 100%;
+        max-width: 400px;
+        display: block;
+        word-wrap: break-word;
+        hyphens: auto;
+        break-inside: avoid;
+
       }
     }
 

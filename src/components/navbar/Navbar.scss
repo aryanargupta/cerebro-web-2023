@@ -1,21 +1,58 @@
-.hamburger{
+.hamburger {
     background: url("../../assets/images/hamburger.svg");
     position: absolute;
     top: 30px;
     left: 28px;
     height: 36px;
     width: 36px;
-}
-.hamburger_landing{
-    background: url("../../assets/images/cerebroLogo.svg");
+    cursor: pointer;
+    z-index: 11;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .hamburger_landing {
+    background: url("../../assets/images/hamburger.svg");
     position: absolute;
     top: 30px;
     left: 28px;
-    height: 54px;
-    width: 58px;
-}
-
-.dashboard-btn{
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    z-index: 11;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(4px); /* Add backdrop-filter property */
+    a {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .dashboard-btn {
     position: absolute;
     height: 40px;
     width: 172px;
@@ -29,77 +66,9 @@
     border: 1px solid rgba(75, 179, 143, 1);
     color: rgba(215, 215, 215, 1);
     cursor: pointer;
-    &:hover{
-        opacity: 0.8;
+    z-index: 2;
+    &:hover {
+      opacity: 0.8;
     }
-}
-//  /* dashboard button */
-
-// box-sizing: border-box;
-
-// /* Auto layout */
-// display: flex;
-// flex-direction: row;
-// justify-content: center;
-// align-items: center;
-// padding: 10px 152px;
-// gap: 5px;
-
-// position: absolute;
-// width: 172px;
-// height: 40px;
-// right: 28px;
-// top: 28px;
-
-
-// border: 1px solid #4BB38F;
-// border-radius: 5px;
-
-
-// /* Dashboard */
-
-// width: 89px;
-// height: 26px;
-
-// font-family: 'Jost';
-// font-style: normal;
-// font-weight: 600;
-// font-size: 18px;
-// line-height: 26px;
-// /* identical to box height */
-// text-align: center;
-
-// color: #D7D7D7;
-
-
-// /* Inside auto layout */
-// flex: none;
-// order: 0;
-// flex-grow: 0;
-
-
-// /* arrow-left-thin */
-
-// display: none;
-// width: 24px;
-// height: 24px;
-
-// transform: matrix(-1, 0, 0, 1, 0, 0);
-
-// /* Inside auto layout */
-// flex: none;
-// order: 1;
-// flex-grow: 0;
-
-
-// /* Vector */
-
-// position: absolute;
-// left: 81.25%;
-// right: -39.58%;
-// top: 33.33%;
-// bottom: 33.33%;
-
-// background: #FFFFFF;
-// border-radius: 0.4px;
-// transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+  
