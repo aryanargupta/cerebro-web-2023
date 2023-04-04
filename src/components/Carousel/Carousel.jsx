@@ -21,22 +21,21 @@ const Carousel = () => {
     currentSlide,
     setCurrentSlide,
     slides,
-    setSlides,
+    setSlides
   } = useContext(EventContext);
 
   // const [currentSlide, setCurrentSlide] = useState(0);
   // const [slides, setSlides] = useState(selectSlide.slice(0, 3));
 
   // const [left,setLeft]=useState('left');
-  useEffect(() => {
-    // setSlides(data);
-    // console.log(data.length);
-  }, []);
+  
 
   // const onClickCard= () =>{   //2
   //   setVisible('Active');
   //   className = `carousel ${visible}`;
   // }
+
+ 
 
   const nextSlide = async () => {
     const nextSlideIndex =
@@ -61,7 +60,7 @@ const Carousel = () => {
         <button onClick={previousSlide}>
           <img
             className={`${disable}`}
-            src={currentSlide === 0 ? { Style: { display: "none" } } : left}
+            src={currentSlide === 0 ? { Style: { display: "none" } } : selectSlide.length <= 3?  { Style: { display: "none" } } : left}
             alt=""
           />
         </button>
@@ -79,7 +78,7 @@ const Carousel = () => {
             src={
               currentSlide === selectSlide.length - 3
                 ? { Style: { display: "none" } }
-                : right
+                : selectSlide.length <= 3?  { Style: { display: "none" } } :right
             }
             alt=""
           />

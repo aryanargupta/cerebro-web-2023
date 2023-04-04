@@ -12,7 +12,7 @@ export function EventProvider({ children }) {
       setLoading(true);
       let data = await axiosInstance.get('/events/');
       data = data.data;
-      console.log(data);
+      // console.log(data);
       setEvents(data);
       const filterData = data.filter((e) => e.event_type === selectEvent);
       setSelectedSlide(filterData);
@@ -44,8 +44,8 @@ export function EventProvider({ children }) {
   useEffect(() => {
     // setLoading(true);
     const filterData = events.filter((e) => e.event_type === selectEvent);
-    console.log(selectEvent);
-    console.log(filterData);
+    // console.log(selectEvent);
+    // console.log(filterData);
     setSelectedSlide(filterData);
     // setOpenEvent(filterData);
     setSlides(filterData.slice(0, 3));
@@ -72,7 +72,6 @@ export function EventProvider({ children }) {
       value={{
         visible,
         setVisible,
-
         display,
         setDisplay,
         onClickClose,

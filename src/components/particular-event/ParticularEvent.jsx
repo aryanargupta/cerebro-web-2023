@@ -11,9 +11,21 @@ import FormInput from '../FormInput/FormInput';
 import BtnLoader from '../BtnLoader/BtnLoader';
 import useAuth from '../../hooks/useAuth';
 
-function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClose }) {
-  console.log(openevent);
 
+function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClose }) {
+  // console.log(openevent);
+  const [showDescription, setShowDescription] = useState(false);
+  const getRoleBasedLeaders = (role) => {
+    const arr = openevent.contacts.filter((contact) => role === "Co-Convenor" ? contact.role === "Co-Convenor1" || contact.role === "Co-Convenor2" : contact.role === role);
+
+    var res = "";
+    for (var i = 0; i < arr.length; i++) {
+      res += arr[i].name + ", ";
+    }
+    res = res.substring(0, res.length - 2);
+    return res.toUpperCase();
+  }
+  
   return (
     <div className="event-content">
       <div className="left-container">
@@ -21,19 +33,25 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
       </div>
       <div className="right-container">
         <div className="event-title">
-          <h2>{openevent.title}</h2>
+          <p>{openevent.title}</p>
         </div>
         <div className="event-desc">
-          <p>{openevent.description}</p>
+   
+        
+        {showDescription ?  <p>{openevent.description}{openevent.rules_doc?<p>Rule Book : <a href={openevent.rules_doc} target="_blank">RuleBook</a><button className='read-btn' onClick={() => setShowDescription(false)}>Read Less</button></p>:<button className='read-btn' onClick={() => setShowDescription(false)}>Read Less</button>} </p>:
+          <p>{openevent.description?openevent.description.slice(0, 300)+"...":" "} {openevent.description?<button className='read-btn' onClick={() => setShowDescription(true)}>Read More</button>:" "}</p> }
+
         </div>
         <div className="event-time">
           <div className="event-prize">
             {/* <img src={prizeBorder} alt="" /> */}
             <div className="prize_Worth">
-              <h3>PRIZES WORTH</h3>
+              <p>PRIZES WORTH</p>
             </div>
+    <div className="prize-line">
 
-            <div className="prize_amount">{openevent.prize}</div>
+    </div>
+            <div className="prize_amount">{openevent.prize} INR</div>
           </div>
           <div className="event-date">
             <div className="event-date-in">
@@ -65,8 +83,9 @@ function EventDetails({ openevent, enableJoinTeam, enableCreateTeam, onClickClos
 
           <div className="event-team-right">
             <li>{openevent?.team_size}</li>
-            <li>{openevent?.contacts[0] ? openevent?.contacts[0]?.name : 'none'}</li>
-            <li>{openevent?.contacts[1] ? openevent?.contacts[1]?.name : 'none'}</li>
+            
+            <li>{getRoleBasedLeaders("Convenor")}</li>
+            <li>{getRoleBasedLeaders("Co-Convenor")}</li>
           </div>
         </div>
 
@@ -378,7 +397,7 @@ function ParticularEvent() {
 
   return (
     <div className={`particular-container ${display}`}>
-      <div className="bg-img" />
+      {/* <div className="bg-img" /> */}
       {!joinTeam && !createTeam && (
         <EventDetails
           openevent={openevent}

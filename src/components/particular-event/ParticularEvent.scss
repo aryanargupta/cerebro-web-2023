@@ -22,33 +22,41 @@ $mobile: 600px;
   //   overflow: hidden;
   // padding: 20px;
 
-  .bg-img {
-    position: absolute;
-    top: 48px;
-    left: 89px;
-    width: 85%;
-    height: 62vh;
-    // background-image: url('../../assets/images/event-bg.png');
-    background-color: rgba(4, 58, 48, 0.27);
-    background-size: cover;
-    background-position: center;
-    // opacity: 0.5;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    z-index: -1;
-    border: 1px solid#0B5447;
-    border-radius: 25px;
-  }
+  // .bg-img {
+  //   position: absolute;
+  //   top: 48px;
+  //   left: 89px;
+  //   width: 85%;
+  //   height: 62vh;
+  //   // background-image: url('../../assets/images/event-bg.png');
+  //   background-color: rgba(4, 58, 48, 0.27);
+  //   background-size: cover;
+  //   background-position: center;
+  //   // opacity: 0.5;
+  //   filter: blur(8px);
+  //   -webkit-filter: blur(8px);
+  //   z-index: -1;
+  //   border: 1px solid#0B5447;
+  //   border-radius: 25px;
+  // }
 
   .event-content {
     position: relative;
     color: white;
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    gap: 2rem;
     border: 1px solid white;
 
+
+    // background-color: rgba(4, 58, 48, 0.27);
+    
+    background-image: url('../../assets/event-desc-bg.png');
+    background-size: cover;
+   
+    background-position: center;
     .close-btn {
       top: 21px;
       position: absolute;
@@ -70,18 +78,54 @@ $mobile: 600px;
     }
 
     .right-container {
-      width: 60%;
+      width: 65%;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       // height: 100%;
 
       .event-title {
-        font-weight: 500;
-        font-size: 22px;
+        
+       font-family: Jost;
+       font-size: 26px;
+       font-weight: 500;
+       line-height: 32px;
+        letter-spacing: 0.09em;
+        text-align: left;
+        color: #D7D7D7;
+        ;
+
       }
 
       .event-desc {
+        font-family: Jost;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+
+font-family: Jost;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+
+a{
+  text-decoration: none;
+  color: #087c6d;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.read-btn{
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  margin-left: 12px;
+  text-align: center;
+}
+
       }
 
       .event-time {
@@ -93,30 +137,73 @@ $mobile: 600px;
           width: 145px;
           height: 74px;
           background-repeat: no-repeat;
+          font-family: Jost;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 23px;
+          letter-spacing: 0em;
+          text-align: center;
+          
+
           // padding-left: 15px;
           // padding-top: 5px;
           
         }
         .prize_amount{
           text-align: center;
-          padding-top: 10px;
+          // padding-top: 10px;
+          
+
+          font-family: Jost;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 26px;
+          letter-spacing: 0em;
+          text-align: center;
+          color:  #7FE2D5;
+          ;
+
+
+        }
+        .prize-line{
+          background-image: url('../../assets/prize-line.png');
+          height: 3px;
+          width: 80%;
+          margin-left: 13px;
+          margin-top: 4px;
         }
         .prize_Worth{
           text-align: center;
           padding-top: 10px;
+          font-family: Jost;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          letter-spacing: 0em;
+          text-align: center;
+          
         }
         .event-date {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          .event-date-in {
+          .event-date-out {
+            color:  #7FE2D5;
           }
           .event-date-in {
+            color:  #7FE2D5;
           }
         }
       }
 
       .event-team {
+        font-family: Jost;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        // text-align: center;
+
         display: flex;
         gap: 2rem;
         li {
@@ -186,7 +273,7 @@ button {
   background: url(../../assets/joinbg.png);
   background-size: cover;
   // object-fit: contain;
-  border-right: 0.1px solid #336964;
+  border-bottom: 0.1px solid #336964;
   height:100%;
   background-repeat: no-repeat;
   width: 100%;

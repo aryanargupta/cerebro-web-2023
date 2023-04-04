@@ -1,16 +1,16 @@
 [
     {
-        "title": "Tech",
+        "title": "TECHNICAL",
         "event_type": "tech",
         "id": 1
     },
     {
-        "title": "Gaming",
+        "title": "GAMING",
         "event_type": "gaming",
         "id": 2
     },
     {
-        "title": "Design",
+        "title": "DESIGN",
         "event_type": "design-photo",
         "id": 3
     }

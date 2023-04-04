@@ -20,7 +20,7 @@ const Card = (props) => {
     setVisible("Active");
     setDisplay("display");
     setDisable("notDisplay");
-    console.log(slide);
+    // console.log(slide);
     setOpenEvent(slide);
   };
 
