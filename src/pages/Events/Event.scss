@@ -1,5 +1,12 @@
+.event-body{
+  background: url(../../assets/Dasshboard_bg.png);
+  width: 100vw;
+  height: 100vh;
 .event {
   // overflow: hidden;
+
+ 
+
   font-family: jost;
   font-weight: 400;
   font-size: 20px;
@@ -52,4 +59,5 @@
     width: 100%;
     height: 100%;
   }
+}
 }

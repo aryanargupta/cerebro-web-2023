@@ -96,6 +96,7 @@ function Team() {
 
   if (loading) return <LoadingSpinner />;
   return (
+    <div className="team-body">
     <div className="team">
       <Navbar isLandingPage={!false} />
 
@@ -130,6 +131,7 @@ function Team() {
           {selectedTeamData.map((items) => (
             <TeamMember key={items.id} img={items.profilepic} pos={items.role} name={items.name} />
           ))}
+        
         </div>
         <div className="right">
           <img
@@ -139,6 +141,8 @@ function Team() {
           />
         </div>
       </div>
+     
+    </div>
     </div>
   );
 }

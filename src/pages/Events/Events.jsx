@@ -31,6 +31,7 @@ function Events() {
   // if (loading)   return <LoadingSpinner />;
 
   return !loading ? (
+    <div className="event-body">
     <div className="event">
       <Navbar isLandingPage={!false} />
       <div className="event-header">
@@ -43,7 +44,7 @@ function Events() {
               key={i.id}
               onClick={() => {
                 setSelectedEvent(i.event_type);
-                console.log(i.event_type);
+                // console.log(i.event_type);
                 setJoinTeam(false);
                 setCreateTeam(false);
                 onClickClose();
@@ -57,6 +58,7 @@ function Events() {
         <Carousel />
         <div className="particular-event">{openevent && <ParticularEvent />}</div>
       </div>
+    </div>
     </div>
   ) : (
     <LoadingSpinner />
