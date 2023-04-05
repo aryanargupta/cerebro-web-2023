@@ -15,7 +15,7 @@ function Timeline() {
         <div className="timeline_container_left">
           <div className="timeline_container_left_head">
             <div className="timeline_container_left_head_left_box"> </div>
-            <div className="timeline_container_left_head_middle_box">Online Events (April 1-3)</div>
+            <div className="timeline_container_left_head_middle_box">Online Events</div>
             <div className="timeline_container_left_head_right_box"> </div>
           </div>
           <div className="timeline_container_items">
@@ -33,7 +33,7 @@ function Timeline() {
           <div className="timeline_container_middle_head">
             <div className="timeline_container_middle_head_left_box"> </div>
             <div className="timeline_container_middle_head_middle_box">
-              Online Events (April 5-6)
+              Online Events
             </div>
             <div className="timeline_container_middle_head_right_box"> </div>
           </div>
@@ -51,7 +51,7 @@ function Timeline() {
         <div className="timeline_container_right">
           <div className="timeline_container_right_head">
             <div className="timeline_container_right_head_left_box"> </div>
-            <div className="timeline_container_right_head_middle_box">Offline Events (April 7)</div>
+            <div className="timeline_container_right_head_middle_box">Offline Events (April 9)</div>
             <div className="timeline_container_right_head_right_box"> </div>
           </div>
           <div className="timeline_container_items">
