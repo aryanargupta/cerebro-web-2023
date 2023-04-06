@@ -50,12 +50,10 @@ function Team() {
      let data=await axiosInstance.get('/teams')
         // data=data.data;
         setTeamData(data.data);
-        setFetch(true);
         console.log(data.data);
         setLoading(false); 
   }
   const [isActive, setActive] = useState('Core');
-  // const [fetch,setFetch] =useState(false);
   const [teamData, setTeamData] = useState([]);
   const [currTeam, setCurrTeam] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState('Core');
