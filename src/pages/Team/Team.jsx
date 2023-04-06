@@ -22,21 +22,38 @@ const teamOptionsArr = [
   'Sponsorship',
 ];
 function Team() {
-  useEffect(() => {
-    setLoading(true);
-    axiosInstance
-      .get('/teams')
-      .then((res) => {
-        setTeamData(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
-  }, []);
-  const [isActive, setActive] = useState('Core');
 
+  // useEffect(() => {
+  //   (async ()=>{
+
+   
+  //   setLoading(true);
+  //   await axiosInstance
+  //     .get('/teams')
+  //     .then((res) => {
+  //       setTeamData(res.data);
+  //       console.log(res.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       setLoading(false);
+  //     });
+  //     })();
+  // }, []);
+  useEffect (()=>{
+    fetchData();
+  },[]);
+
+  const  fetchData=async()=>{
+    setLoading(true);
+     let data=await axiosInstance.get('/teams')
+        // data=data.data;
+        setTeamData(data.data);
+        console.log(data.data);
+        setLoading(false); 
+  }
+  const [isActive, setActive] = useState('Core');
   const [teamData, setTeamData] = useState([]);
   const [currTeam, setCurrTeam] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState('Core');
@@ -44,24 +61,29 @@ function Team() {
   const [lastMember, setLastMember] = useState(6);
   const [visibleLeft, setVisibleLeft] = useState(true);
   const [showLoadingSpinner, setShowLoadingSpinner] = useState(true);
-  const [visibleRight, setVisibleRight] = useState(false);
+  const [visibleRight, setVisibleRight] = useState(true);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setShowLoadingSpinner(true);
+   
+    
     for (const i in teamData) {
       if (i === selectedTeam) {
         setCurrTeam(teamData[i]);
-        setSelectedTeam(i);
         setSelectedTeamData(teamData[i].slice(0, 6));
       }
     }
-    setShowLoadingSpinner(false);
-  }, [selectedTeam, teamData]);
+ 
+  }, [selectedTeam,teamData]);
 
-  useEffect(() => {
-    if (currTeam.length < 6) setVisibleRight(() => true);
-  }, []);
+ useEffect(() => {
+    
+    if (currTeam.length > 6) setVisibleRight(() => false);
+    else {
+      setVisibleRight(() => true);
+    }
+    setVisibleLeft(true);
+  }, [currTeam]);
 
   const nextTeamMember = () => {
     // const nextMember = lastMember === json.length ? lastMember : (lastMember + 6) ;
